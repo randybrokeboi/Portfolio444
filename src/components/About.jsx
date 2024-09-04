@@ -1,7 +1,3 @@
-import {ABOUT} from "../constants/index.jsx";
-import styled, { keyframes } from 'styled-components';
-import {slideOutUp} from "react-animations";
-const Bounce = styled. div`animation: 1s ${keyframes`${slideOutUp}`} infinite`;
 import {Magnet} from "../Effects/Effects.jsx";
 
 const About = () => {

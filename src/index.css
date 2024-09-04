@@ -441,15 +441,15 @@ body:has(.Propage:hover) .cursor{
 }
 
 body:has(.ProjectH:hover) .cursor{
-    width: 245px;
-    height: 528px;
-    border-radius: 20px;
+    width: 249px;
+    height: 540px;
+    border-radius: 30px;
     overflow: hidden;
     mix-blend-mode: normal;
 }
 body:has(.ProjectN:hover) .cursor{
-    width: 536px !important;
-    height: 265px !important;
+    width: 535px;
+    height: 265px;
     border-radius: 20px;
     overflow: hidden;
     mix-blend-mode: normal;

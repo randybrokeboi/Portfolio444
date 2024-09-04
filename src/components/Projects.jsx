@@ -1,6 +1,8 @@
-import {useState} from "react";
 import useMousePosition from "../Effects/mouseffect.jsx";
-import {GradientText, ShinyText} from "../Effects/Effects.jsx";
+import {GradientText} from "../Effects/Effects.jsx";
+import Hercule from "../assets/Hercule.mp4"
+import Naruto from "../assets/video-naruto.mp4"
+import Inception from "../assets/inception.gif"
 const Projects = () => {
   let clip = document.querySelector(".videocursor")
   /* Adding the event listeners on the video to play/pause the video. */
@@ -32,7 +34,7 @@ const Projects = () => {
             <div className="Project-row text-black text-8xl">Naruto Shippython</div>
             <div className="Project-desc"> Fighting game based on Naruto™️ styled as a flash game,
               <GradientText colors={["#ffdb00", "#4079ff", "#ffef40", "#4079ff", "#ffdb00"]} animationSpeed={3}
-                            showBorder={false}>Python/Pygames</GradientText>
+                            showBorder={false}>Python / Pygames</GradientText>
             </div>
           </a>
           <a className="Project ProjectP" href="https://github.com/randybrokeboi/Portfolio444" target="_blank">
@@ -45,9 +47,9 @@ const Projects = () => {
         </div>
       </div>
       <div className="cursor hidden" style={{left: x + 'px', top: y + 'px'}}>
-        <video className="videocursor hidden" src="/src/assets/Hercule.mp4" autoPlay muted loop/>
-        <video className="videocursorr hidden" src="/src/assets/video-naruto.mp4" autoPlay muted loop/>
-        <img className="videocursorrr hidden" src="/src/assets/inception.gif"/>
+        <video className="videocursor hidden" src={Hercule} autoPlay muted loop/>
+        <video className="videocursorr hidden" src={Naruto} autoPlay muted loop/>
+        <img className="videocursorrr hidden" src={Inception}/>
       </div>
     </div>
   );

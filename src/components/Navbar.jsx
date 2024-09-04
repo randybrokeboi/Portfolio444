@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="header-container">
         <div className="header-logo-box" onClick={test}>
           <a href="#">
-            <video src={logomov} id="logoanim" autoPlay muted loop  />
+            <video src={logomov} id="logoanim" autoPlay muted loop className="relative left-2.5 top-2.5  max-w-[110%]"></video>
           </a>
           <svg className="svg-corner corner-logo-box-one" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">

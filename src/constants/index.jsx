@@ -26,27 +26,6 @@ export const NAVIGATION_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const PROFILE = {
-  name: "Randy Semedo",
-  info: "Full-stack developer with a flair for graphic design.",
-};
-
-export const ABOUT = {
-  text1:
-    "I'm a french developer",
-  text2:
-    "I create dynamic, responsive websites that blend creativity with efficiency",
-};
-
-export const PROJECTS = [
-  {
-    title: "Personal Portfolio",
-    subtitle:
-      "A personal portfolio website designed with HTML, CSS, and JavaScript.",
-    image: "",
-  },
-];
-
 export const SKILLSF = [
   {
     icon: <RiHtml5Line className="text-4xl lg:text-6xl text-orange-500" />,
