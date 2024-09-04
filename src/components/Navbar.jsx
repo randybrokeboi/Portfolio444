@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="header-container">
         <div className="header-logo-box" onClick={test}>
           <a href="#">
-            <img src={logomov} id="logoanim" alt="logo"/>
+            <video src={logomov} id="logoanim" autoPlay muted loop  />
           </a>
           <svg className="svg-corner corner-logo-box-one" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -64,11 +64,11 @@ const Navbar = () => {
           </svg>
         </div>
         <div className="header-symbol-box">
-          <a href="#">
+          <div>
             <img src={wifi} className="next w-6" alt="wifi"/>
             <a className="next relative top-1 text-lg font-semibold">44 %</a>
             <img src={battery} className="first top-0.5 w-9" alt="battery"/>
-          </a>
+          </div>
           <svg className="svg-corner corner-logo-box-one" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_310_2)">

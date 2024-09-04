@@ -1,7 +1,7 @@
 import React from "react"
 import { ShaderArt } from 'https://esm.sh/shader-art';
 import { UniformPlugin } from 'https://esm.sh/@shader-art/plugin-uniform';
-import Canvas from "../Effects/Canvas.jsx";
+import {Canvas} from "../Effects/Effects.jsx";
 import styled, { keyframes } from 'styled-components'; import {
   bounce
 } from 'react-animations';

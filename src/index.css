@@ -45,7 +45,7 @@
 }
 
 html {
-    scroll-behavior:smooth
+    scroll-behavior:smooth;
 }
 
 :root {
@@ -117,7 +117,7 @@ body.dark .header-logo-box img{
 .header-main {
     width: 100%;
     position: fixed;
-    z-index:99
+    z-index:90
 }
 
 .header-main .top-line {
@@ -225,6 +225,9 @@ shader-art {
     width: 100%;
     height: 100%;
 }
+.Skills shader-art {
+    position: absolute;
+}
 
 .dg{
     display: none !important;
@@ -306,14 +309,6 @@ shader-art {
     width:100%
 }
 
-.grain {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    z-index:1
-}
-
 .hero-container {
     display: flex;
     justify-content: space-between;
@@ -374,6 +369,7 @@ shader-art {
 }
 .Skills .competence{
     justify-content: center;
+    position: relative;
 }
 
 .slides{
@@ -393,9 +389,92 @@ shader-art {
 }
 
 .competence  canvas {
-    width: 500px !important;
-    height: 950px !important;
-    border-radius:30px
+    border-radius:30px;
+}
+
+.compunique{
+    display: flex;
+    width: 33.333333%;
+    flex-direction: column-reverse;
+    margin: 60px;
+}
+
+.Project{
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid black;
+}
+.Project-desc{
+    font-size: .8rem;
+    position: relative;
+    left: 8px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2.5em;
+}
+
+.cursor{
+    pointer-events: none;
+}
+
+.Propage:hover{
+    cursor: none;
+}
+
+.Project:hover {
+    cursor: none;
+}
+body:has(.Project:hover) .gitext{
+    visibility: visible;
+}
+
+body:has(.Propage:hover) .cursor{
+    display: block;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease-out;
+    mix-blend-mode: difference;
+}
+
+body:has(.ProjectH:hover) .cursor{
+    width: 245px;
+    height: 528px;
+    border-radius: 20px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+body:has(.ProjectN:hover) .cursor{
+    width: 536px !important;
+    height: 265px !important;
+    border-radius: 20px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+body:has(.ProjectP:hover) .cursor{
+    width: 500px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+
+body:has(.ProjectH:hover) .videocursor{
+    display: block;
+}
+body:has(.ProjectN:hover) .videocursorr{
+    display: block;
+}
+body:has(.ProjectP:hover) .videocursorrr{
+    display: block;
+}
+
+::selection{
+    background: black;
+    color: #f9f8f6;
 }
 
 @keyframes slide-up {
