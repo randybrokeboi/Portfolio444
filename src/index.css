@@ -137,18 +137,58 @@ body.dark .header-logo-box img{
     padding:0 40px
 }
 
+.header-main .header-container .header-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index:20;
+    width: 20%;
+    max-width: 146px;
+    padding-right: 1em;
+    height: 80px;
+    border-radius: 0 0 30px;
+    margin-right: 11px;
+    left: 10px;
+}
+@media screen and (min-width: 768px) {
+    .header-main .header-container .header-logo-box {
+        left: 20px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .header-main .header-container .header-logo-box {
+        left: 40px;
+    }
+}
+
+.header-main .header-container .header-logo-box span {
+    position: relative;
+    top: -3px;
+    font-size: 1.5rem;
+    margin-right: .3em;
+    font-weight: 500;
+    color:#999
+}
+
 .header-main .header-container .header-symbol-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: auto;
-    padding-left: 1em;
+    padding-left: 0.5em;
     height: 50px;
     border-radius: 0 0 0 26px;
     margin-left: 11px;
-    right: 40px;
+    right: 10px;
     position: fixed;
     z-index:20
+}
+@media screen and (min-width: 768px) {
+    .header-main .header-container .header-symbol-box{
+        right: 40px;
+        padding-left: 1em;
+    }
 }
 
 .header-main .header-container .header-symbol-box img {
@@ -163,70 +203,15 @@ body.dark .header-logo-box img{
     margin-left: 3px;
 }
 
-.header-main .header-container .header-symbol-box .corner-logo-box-one {
-    bottom: -30px;
-    right:0;
-    transform: rotate(90deg);
-}
-
-.header-main .header-container .header-symbol-box .corner-logo-box-two {
-    left: -30px;
-    top:0;
-    transform: rotate(90deg);
-
-}
-
-.header-main .header-container .header-logo-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 9%;
-    padding-right: 1em;
-    height: 80px;
-    border-radius: 0 0 30px;
-    margin-right: 11px;
-    left: 40px;
-    position: fixed;
-    z-index:20
-}
-
-.header-main .header-container .header-logo-box img {
-    left: -5px;
-    width: 150px;
-    position:relative;
-    max-width: 130%;
-}
-
-.header-main .header-container .header-logo-box span {
-    position: relative;
-    top: -3px;
-    font-size: 1.5rem;
-    margin-right: .3em;
-    font-weight: 500;
-    color:#999
-}
-
-.header-main .header-container .header-logo-box .corner-logo-box-one {
-    bottom: -30px;
-    left:0
-}
-
-.header-main .header-container .header-logo-box .corner-logo-box-two {
-    right: -30px;
-    top:0
-}
-
 .svg-corner {
     position: absolute;
 }
+
 
 shader-art {
     display: block;
     width: 100%;
     height: 100%;
-}
-.Skills shader-art {
-    position: absolute;
 }
 
 .dg{
@@ -292,40 +277,25 @@ shader-art {
     transition:.2s ease
 }
 
+
+
 .hero {
-    display: flex;
     margin-top: 10px;
-    overflow:hidden
-}
-
-.main-container {
-    width: 100%;
-    margin: auto;
-    max-width: 1800px;
-    padding:0 40px
-}
-
-.full-width {
-    width:100%
-}
-
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    gap: .6em;
     min-height: 630px;
-    height:100vh
-}
-
-.hero-container .hero-left {
+    height:100vh;
     position: relative;
     width: 100%;
-    height: 100%;
     border-radius: 30px;
-    align-items:end
+    max-width: 100%;
+    padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+    .hero {
+        padding: 0 40px
+    }
 }
 
-.hero-container .hero-left .gradient-container {
+.hero .gradient-container {
     overflow: hidden;
     border-radius: 30px;
     position: absolute;
@@ -333,13 +303,9 @@ shader-art {
     width:100%
 }
 
-.hero-container .hero-left .gradient-container .hero-gradient {
-    width: 1800px;
-    border-radius:30px
-}
 
-.hero-container .hero-left .gradient-container .hero-gradient canvas {
-    width: 1800px !important;
+.hero .gradient-container canvas {
+    width: 100% !important;
     height: 1050px !important;
     border-radius:30px
 }
@@ -361,12 +327,137 @@ shader-art {
 }
 
 .About{
-    padding: 0 40px;
+    padding: 0 20px;
+}
+@media screen and (min-width: 640px) {
+    .About{
+        padding: 0 40px;
+    }
+}
+
+.Project{
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid black;
+}
+.Project-desc{
+    font-size: .8rem;
+    position: relative;
+    font-weight: 300;
+    left: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2.5em;
+}
+@media screen and (min-width: 900px) {
+    .Project-desc{
+        left: 8px;
+    }
+}
+
+.Propage{
+    padding: 0 20px;
+}
+@media screen and (min-width: 640px) {
+    .Propage{
+        padding: 0 40px;
+    }
+}
+
+.cursor{
+    pointer-events: none;
+}
+
+.Propage:hover, .Project:hover{
+    cursor: none;
+}
+
+body:has(.Project:hover, .videocur:hover) .gitext {
+    visibility: visible;
+}
+
+body:has(.Propage:hover) .cursor {
+    display: block;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    transform: translate(-50%, -50%);
+    transition: 0.04s;
+    mix-blend-mode: difference;
+}
+
+body:has(.ProjectH:hover, .videocursor:hover) .cursor {
+    width: 249px;
+    height: 540px;
+    border-radius: 30px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+
+body:has(.ProjectN:hover, .videocursorr:hover) .cursor {
+    width: 534px;
+    height: 265px;
+    border-radius: 20px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+
+body:has(.ProjectP:hover, .videocursorrr:hover) .cursor {
+    width: 500px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+
+body:has(.ProjectH:hover, .videocursor:hover) .videocursor {
+    display: block;
+}
+
+body:has(.ProjectN:hover, .videocursorr:hover) .videocursorr {
+    display: block;
+}
+
+body:has(.ProjectP:hover, .videocursorrr:hover) .videocursorrr {
+    display: block;
+}
+
+.videocur{
+    pointer-events: none;
+}
+@media (hover: none) {
+    .videocur{
+        pointer-events: auto;
+    }
+    .Project {
+        pointer-events: none;
+    }
+    .Project-row, .Project-desc{
+        pointer-events: auto;
+    }
+    body:has(.ProjectH .Project-row:hover, .ProjectH .Project-desc:hover, .videocursor:hover) .videocursor {
+        display: block;
+    }
+
+    body:has(.ProjectN .Project-row:hover, .ProjectN .Project-desc:hover, .videocursorr:hover) .videocursorr {
+        display: block;
+    }
+
+    body:has(.ProjectP .Project-row:hover, .ProjectP .Project-desc:hover, .videocursorrr:hover) .videocursorrr {
+        display: block;
+    }
 }
 
 .Skills{
-    padding: 0 40px;
+    padding: 0 20px;
 }
+@media screen and (min-width: 640px) {
+    .Skills{
+        padding: 0 40px;
+    }
+}
+
 .Skills .competence{
     justify-content: center;
     position: relative;
@@ -396,80 +487,12 @@ shader-art {
     display: flex;
     width: 33.333333%;
     flex-direction: column-reverse;
-    margin: 60px;
+    margin: 30px;
 }
-
-.Project{
-    margin-bottom: 2.5rem;
-    border-bottom: 1px solid black;
-}
-.Project-desc{
-    font-size: .8rem;
-    position: relative;
-    left: 8px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 2.5em;
-}
-
-.cursor{
-    pointer-events: none;
-}
-
-.Propage:hover{
-    cursor: none;
-}
-
-.Project:hover {
-    cursor: none;
-}
-body:has(.Project:hover) .gitext{
-    visibility: visible;
-}
-
-body:has(.Propage:hover) .cursor{
-    display: block;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: white;
-    transform: translate(-50%, -50%);
-    transition: 0.1s ease-out;
-    mix-blend-mode: difference;
-}
-
-body:has(.ProjectH:hover) .cursor{
-    width: 249px;
-    height: 540px;
-    border-radius: 30px;
-    overflow: hidden;
-    mix-blend-mode: normal;
-}
-body:has(.ProjectN:hover) .cursor{
-    width: 535px;
-    height: 265px;
-    border-radius: 20px;
-    overflow: hidden;
-    mix-blend-mode: normal;
-}
-body:has(.ProjectP:hover) .cursor{
-    width: 500px;
-    height: 250px;
-    border-radius: 20px;
-    overflow: hidden;
-    mix-blend-mode: normal;
-}
-
-body:has(.ProjectH:hover) .videocursor{
-    display: block;
-}
-body:has(.ProjectN:hover) .videocursorr{
-    display: block;
-}
-body:has(.ProjectP:hover) .videocursorrr{
-    display: block;
+@media screen and (min-width: 640px) {
+    .compunique{
+        margin: 60px;
+    }
 }
 
 ::selection{

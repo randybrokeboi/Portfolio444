@@ -23,7 +23,7 @@ export const NAVIGATION_LINKS = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "mailto:randy.semedo@hotmail.fr?subject=Prise de contact&body=Bonjour Randy!" },
 ];
 
 export const SKILLSF = [

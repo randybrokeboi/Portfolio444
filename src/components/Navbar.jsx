@@ -1,5 +1,6 @@
 import { useState } from "react"
 import logomov from "../assets/Memojirandy.mov"
+import logopng from "../assets/Memojirandy3.png"
 import wifi from "../assets/wifiapple.png"
 import battery from "../assets/battery50apple.png"
 import {NAVIGATION_LINKS} from "../constants"
@@ -12,23 +13,23 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
-  const test = () => {
-    document.getElementById("logoanim").setCurrentTime(10);
-  }
   const handleLinkClick = (e, href) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      const offset = -85;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY + offset;
+    if (!(href.includes("mailto"))){
+      e.preventDefault();
+      const targetElement = document.querySelector(href);
+      console.log(href);
+      if (targetElement) {
+        const offset = -85;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY + offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      })
-    }
-    setIsMobileMenuOpen(false);
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        })
+      }
+      setIsMobileMenuOpen(false);
+      }
   }
   // noinspection JSValidateTypes
   return (
@@ -36,11 +37,11 @@ const Navbar = () => {
       {/*Desktop Menu header*/}
       <div className="top-line"></div>
       <div className="header-container">
-        <div className="header-logo-box" onClick={test}>
+        <div className="header-logo-box">
           <a href="#">
-            <video src={logomov} id="logoanim" autoPlay muted loop className="relative left-2.5 top-2.5  max-w-[110%]"></video>
+            <video src={logomov} id="logoanim" autoPlay muted loop preload="auto" poster={logopng} playsInline className="relative left-2.5 top-2.5   max-w-[110%]"></video>
           </a>
-          <svg className="svg-corner corner-logo-box-one" width="30" height="30" viewBox="0 0 30 30" fill="none"
+          <svg className="svg-corner corner-logo-box-one -bottom-[30px] lg:left-0 md:left-[20px] left-[10px]" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_310_2)">
               <path d="M30 0H0V30C0 13.431 13.431 0 30 0Z" fill="#F9F8F6"></path>
@@ -51,7 +52,7 @@ const Navbar = () => {
               </clipPath>
             </defs>
           </svg>
-          <svg className="svg-corner corner-logo-box-two" width="30" height="30" viewBox="0 0 30 30" fill="none"
+          <svg className="svg-corner corner-logo-box-two -right-[30px] top-0" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_310_2)">
               <path d="M30 0H0V30C0 13.431 13.431 0 30 0Z" fill="#F9F8F6"></path>
@@ -69,7 +70,7 @@ const Navbar = () => {
             <a className="next relative top-1 text-lg font-semibold">44 %</a>
             <img src={battery} className="first top-0.5 w-9" alt="battery"/>
           </div>
-          <svg className="svg-corner corner-logo-box-one" width="30" height="30" viewBox="0 0 30 30" fill="none"
+          <svg className="svg-corner corner-logo-box-one -bottom-[30px] md:right-0 right-[10px] rotate-90" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_310_2)">
               <path d="M30 0H0V30C0 13.431 13.431 0 30 0Z" fill="#F9F8F6"></path>
@@ -80,7 +81,7 @@ const Navbar = () => {
               </clipPath>
             </defs>
           </svg>
-          <svg className="svg-corner corner-logo-box-two" width="30" height="30" viewBox="0 0 30 30" fill="none"
+          <svg className="svg-corner corner-logo-box-two -left-[30px] top-0 rotate-90" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_310_2)">
               <path d="M30 0H0V30C0 13.431 13.431 0 30 0Z" fill="#F9F8F6"></path>

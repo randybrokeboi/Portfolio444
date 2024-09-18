@@ -2,6 +2,7 @@
 import { ShaderArt } from 'https://esm.sh/shader-art';
 import { UniformPlugin } from 'https://esm.sh/@shader-art/plugin-uniform';
 import {useEffect, useRef, useState} from "react";
+import { useSprings, animated } from '@react-spring/web';
 
 ShaderArt.register([() => new UniformPlugin()]);
 
@@ -222,7 +223,7 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(255, 2
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden p-8 ${className}`}
+      className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden sm:p-8 ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
@@ -300,16 +301,71 @@ function GradientText({
           backgroundSize: "300% 100%",
         }}
       >
-        &nbsp;{children}
+        {children}
       </div>
     </span>
   );
 }
+
+
+const BlurText = ({ text, delay = 200, className = '', space = 1, transi = 0 }) => {
+  const words = text.split(' ');
+  const [inView, setInView] = useState(false);
+  const ref = useRef();
+  let sp = "";
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.unobserve(ref.current); // Unobserve after triggering the animation
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+  const springs = useSprings(
+    words.length,
+    words.map((_, i) => ({
+      from: { filter: 'blur(10px)', opacity: 0, transform: 'translate3d(0,-50px,0)' },
+      to: inView
+        ? async (next) => {
+          await next({ filter: 'blur(5px)', opacity: 0.5, transform: 'translate3d(0,5px,0)' });
+          await next({ filter: 'blur(0px)', opacity: 1, transform: 'translate3d(0,0,0)' });
+        }
+        : { filter: 'blur(10px)', opacity: 0 },
+      delay: (i + transi) * delay,
+    }))
+  );
+  if (space === 1){
+    sp = '\xa0'
+  }
+
+  return (
+    <span ref={ref} className={`${className}`}>
+      {springs.map((props, index) => (
+        <animated.span
+          key={index}
+          style={props}
+          className="inline-block will-change-transform will-change-filter will-change-opacity"
+        >
+          {words[index]}{sp}
+        </animated.span>
+      ))}
+    </span>
+  );
+};
 
 export {
   Canvas,
   Magnet,
   SpotlightCard,
   ShinyText,
-  GradientText
+  GradientText,
+  BlurText
 }
