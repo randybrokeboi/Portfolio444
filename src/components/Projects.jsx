@@ -1,5 +1,5 @@
 import useMousePosition from "../Effects/mouseffect.jsx";
-import {GradientText} from "../Effects/Effects.jsx";
+import {GradientText, StarBorder} from "../Effects/Effects.jsx";
 import Hercule from "../assets/Hercule.webm"
 import Naruto from "../assets/video-naruto.mp4"
 import Inception from "../assets/inception.gif"
@@ -48,14 +48,14 @@ const Projects = () => {
           </a>
         </div>
       </div>
-      <div className="cursor hidden" style={{left: x + 'px', top: y + 'px'}}>
-        <video className="videocur videocursor hidden" src={Hercule} autoPlay muted loop preload="auto" playsInline onClick={() =>
-        {window.open('https://github.com/')}}/>
-        <video className="videocur videocursorr hidden" src={Naruto} autoPlay muted loop preload="auto" playsInline onClick={() =>
-        {window.open('https://github.com/randybrokeboi/Naruto')}}/>
-        <img className="videocur videocursorrr hidden" src={Inception} alt="inception" onClick={() =>
-        {window.open('https://github.com/randybrokeboi/Portfolio444')}}/>
-      </div>
+        <div className="cursor hidden z-[89]" style={{left: x + 'px', top: y + 'px'}}>
+          <video className="videocur videocursor hidden" src={Hercule} autoPlay muted loop preload="auto" playsInline onClick={() =>
+          {window.open('https://github.com/randybrokeboi/Hercule')}}/>
+          <video className="videocur videocursorr hidden" src={Naruto} autoPlay muted loop preload="auto" playsInline onClick={() =>
+          {window.open('https://github.com/randybrokeboi/Naruto')}}/>
+          <img className="videocur videocursorrr hidden" src={Inception} alt="inception" onClick={() =>
+          {window.open('https://github.com/randybrokeboi/Portfolio444')}}/>
+        </div>
     </div>
   );
 };

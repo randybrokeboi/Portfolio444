@@ -1,15 +1,16 @@
-import { useState } from "react"
+import {useState} from "react"
 import logomov from "../assets/Memojirandy.mov"
 import logopng from "../assets/Memojirandy3.png"
 import wifi from "../assets/wifiapple.png"
 import battery from "../assets/battery50apple.png"
 import {NAVIGATION_LINKS} from "../constants"
 import styled, { keyframes } from 'styled-components'; import {slideInDown} from 'react-animations';
+import {FaBars, FaTimes} from "react-icons/fa";
 const Bounce = styled. div`animation: 1s ${keyframes`${slideInDown}`} 1`;
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
@@ -64,13 +65,14 @@ const Navbar = () => {
             </defs>
           </svg>
         </div>
-        <div className="header-symbol-box">
-          <div>
+        <div className="header-symbol-box sm:h-[50px] sm:flex">
+          <div className="trio-symbol">
             <img src={wifi} className="next w-6" alt="wifi"/>
-            <a className="next relative top-1 text-lg font-semibold">44 %</a>
+            <a className="next relative top-1 text-lg font-semibold">{props.heur}{props.heur} %</a>
             <img src={battery} className="first top-0.5 w-9" alt="battery"/>
           </div>
-          <svg className="svg-corner corner-logo-box-one -bottom-[30px] md:right-0 right-[10px] rotate-90" width="30" height="30" viewBox="0 0 30 30" fill="none"
+          <svg className="svg-corner corner-logo-box-two -left-[30px] top-0 rotate-90" width="30" height="30"
+               viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_310_2)">
               <path d="M30 0H0V30C0 13.431 13.431 0 30 0Z" fill="#F9F8F6"></path>
@@ -81,7 +83,31 @@ const Navbar = () => {
               </clipPath>
             </defs>
           </svg>
-          <svg className="svg-corner corner-logo-box-two -left-[30px] top-0 rotate-90" width="30" height="30" viewBox="0 0 30 30" fill="none"
+
+          {/*Mobile Menu header*/}
+          <div className="sm:hidden mb-0.5 right-[10px] text-right">
+            <button className="focus:outline-none" onClick={toggleMobileMenu}>
+              {isMobileMenuOpen ? (
+                <FaTimes className="m-2 h-6 w-5"/>
+              ) : (
+                <FaBars className="m-2 h-6 w-5"/>
+              )}
+            </button>
+            {isMobileMenuOpen && (
+              <ul className="mb-2 -mt-6">
+                {NAVIGATION_LINKS.map((item, index) => (
+                  <li key={index}>
+                    <a className="w-full text-xl font-semibold" href={item.href}
+                       onClick={(e) => handleLinkClick(e, item.href)}>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <svg className="svg-corner corner-logo-box-one -bottom-[30px] md:right-0 right-[10px] rotate-90" width="30"
+               height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_310_2)">
               <path d="M30 0H0V30C0 13.431 13.431 0 30 0Z" fill="#F9F8F6"></path>
@@ -93,7 +119,7 @@ const Navbar = () => {
             </defs>
           </svg>
         </div>
-        <Bounce className="Sliding effect">
+        <Bounce className="Sliding-effect hidden sm:block">
           <nav className="navigation">
             {NAVIGATION_LINKS.map((item, index) => (
               <a key={index} href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
@@ -103,38 +129,8 @@ const Navbar = () => {
           </nav>
         </Bounce>
       </div>
-      {/*Mobile Menu header*/}
-      {/*} <div className="rounded-lg backdrop-blur-md lg:hidden">
-        <div className="flex items-center justify-between">
-          <div>
-            <a href="#">
-              <img src={logo} width={90} alt="logo" className="m-2"/>
-            </a>
-          </div>
-          <div className="flex items-center">
-            <button className="focus:outline-none lg:hidden" onClick={toggleMobileMenu}>
-              {isMobileMenuOpen ? (
-                <FaTimes className="m-2 h-6 w-5"/>
-              ) : (
-                <FaBars className="m-2 h-6 w-5"/>
-              )}
-            </button>
-          </div>
-        </div>
-        {isMobileMenuOpen && (
-          <ul className="ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md">
-            {NAVIGATION_LINKS.map((item, index) => (
-              <li key={index}>
-                <a className="block w-full text-xl font-semibold" href={item.href}
-                   onClick={(e) => handleLinkClick(e, item.href)}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      */}
+
+
     </header>
   )
 }

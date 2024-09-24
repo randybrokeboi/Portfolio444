@@ -16,9 +16,9 @@ const About = () => {
   return (
     <div className="About container mx-auto" id="about">
       <h2 className="mt-20 text-center lg:text-5xl sm:text-3xl text-2xl font-semibold">About ℹ️</h2>
-      <motion.div ref={targetRef} style={{rotate, x, y, scale}}>
+      <motion.div className="relative" ref={targetRef} style={{rotate, x, y, scale}}>
         <h4
-          className="slides mt-40 mx-1.5 font-bold text-black font-sans lg:text-9xl sm:text-7xl text-5xl leading-none uppercase ">
+          className="slides lg:mt-40 sm:mt-24 mt-20 mx-1.5 font-bold text-black font-sans lg:text-9xl sm:text-7xl text-5xl leading-none uppercase ">
                 <span className="slide1">
                   <span>Hello🌐</span>
                   <span>Bonjour🇫🇷</span>
@@ -33,7 +33,7 @@ const About = () => {
                 </span>
         </h4>
       </motion.div>
-      <h3 className="p-12 mt-12 lg:text-7xl sm:text-5xl text-4xl  font-sans text-center">
+      <h3 className="p-12 lg:mt-12 sm:mt-8 mt-6 lg:text-7xl sm:text-5xl text-3xl  font-sans text-center">
         <BlurText text="I&apos;m" delay={100} transi={2}/>
         <Magnet padding={200}><BlurText text="Randy" delay={300} space={0} transi={5} className="font-bold"/>
         </Magnet>

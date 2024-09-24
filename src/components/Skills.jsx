@@ -1,5 +1,5 @@
 import {SKILLSB, SKILLSF} from "../constants/index.jsx";
-import {Canvas, ShinyText, SpotlightCard} from '../Effects/Effects.jsx';
+import {ShinyText, SpotlightCard} from '../Effects/Effects.jsx';
 
 let color1 = "#ffffff";
 let color2 = "#838399";
