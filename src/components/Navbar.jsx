@@ -66,7 +66,7 @@ const Navbar = (props) => {
           </svg>
         </div>
         <div className="header-symbol-box sm:h-[50px] sm:flex">
-          <div className="trio-symbol">
+          <div className="trio-symbol place-content-center">
             <img src={wifi} className="next w-6" alt="wifi"/>
             <a className="next relative top-1 text-lg font-semibold">{props.heur}{props.heur} %</a>
             <img src={battery} className="first top-0.5 w-9" alt="battery"/>
@@ -85,16 +85,16 @@ const Navbar = (props) => {
           </svg>
 
           {/*Mobile Menu header*/}
-          <div className="sm:hidden mb-0.5 right-[10px] text-right">
+          <div className="sm:hidden mt-1 mb-[17px] right-[10px] text-right">
             <button className="focus:outline-none" onClick={toggleMobileMenu}>
               {isMobileMenuOpen ? (
-                <FaTimes className="m-2 h-6 w-5"/>
+                <FaTimes className="mr-3 h-6 w-5"/>
               ) : (
-                <FaBars className="m-2 h-6 w-5"/>
+                <FaBars className="mr-3 h-6 w-5"/>
               )}
             </button>
             {isMobileMenuOpen && (
-              <ul className="mb-2 -mt-6">
+              <ul className="mr-8 mb-2 -mt-2">
                 {NAVIGATION_LINKS.map((item, index) => (
                   <li key={index}>
                     <a className="w-full text-xl font-semibold" href={item.href}

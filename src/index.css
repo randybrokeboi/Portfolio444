@@ -180,11 +180,6 @@ body.dark .header-logo-box img{
     position: fixed;
     z-index:20
 }
-.header-main .header-container .header-symbol-box .trio-symbol {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 @media screen and (min-width: 768px) {
     .header-main .header-container .header-symbol-box{
         right: 40px;
@@ -386,6 +381,14 @@ body:has(.Propage:hover) .cursor {
     transform: translate(-50%, -50%);
     transition: 0.04s;
     mix-blend-mode: difference;
+}
+@media (hover:none) {
+    body:has(.Propage:hover) .cursor {
+        width: 0;
+        height: 0;
+        left: 50% !important;
+        top: 50% !important;
+    }
 }
 
 body:has(.ProjectH:hover, .videocursor:hover) .cursor {

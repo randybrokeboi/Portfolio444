@@ -8,7 +8,7 @@ const About = () => {
     target: targetRef,
     offset: ["start 35%", "start end"]
   });
-  const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "15deg"]);
+  const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "20deg"]);
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const x = useTransform(scrollYProgress, [0, 1], [0, -500]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
