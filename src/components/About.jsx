@@ -6,19 +6,19 @@ const About = () => {
   const targetRef = useRef(null);
   const {scrollYProgress} = useScroll({
     target: targetRef,
-    offset: ["start 35%", "start end"]
+    offset: ["start 15%", "start end"]
   });
-  const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "20deg"]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const x = useTransform(scrollYProgress, [0, 1], [0, -500]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+  const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "35deg"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-140%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-47%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
   return (
-    <div className="About container mx-auto" id="about">
+    <div className="About" ref={targetRef} id="about">
       <h2 className="mt-20 text-center lg:text-5xl sm:text-3xl text-2xl font-semibold">About ℹ️</h2>
-      <motion.div className="relative" ref={targetRef} style={{rotate, x, y, scale}}>
+      <motion.div className="relative"  style={{rotate, x, y, scale}}>
         <h4
-          className="slides lg:mt-40 sm:mt-24 mt-20 mx-1.5 font-bold text-black font-sans lg:text-9xl sm:text-7xl text-5xl leading-none uppercase ">
+          className="slides lg:mt-40 sm:mt-24 mt-16 mx-1.5 font-bold text-black font-sans lg:text-9xl sm:text-7xl text-5xl leading-none uppercase ">
                 <span className="slide1">
                   <span>Hello🌐</span>
                   <span>Bonjour🇫🇷</span>

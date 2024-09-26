@@ -1,11 +1,11 @@
 import useMousePosition from "../Effects/mouseffect.jsx";
-import {GradientText, StarBorder} from "../Effects/Effects.jsx";
+import {GradientText} from "../Effects/Effects.jsx";
 import Hercule from "../assets/Hercule.webm"
 import Naruto from "../assets/video-naruto.mp4"
 import Inception from "../assets/inception.gif"
 const Projects = () => {
   let clip = document.querySelector(".videocursor")
-  /* Adding the event listeners on the video to play/pause the video. */
+  /* Event listeners on the video to play/pause the video if hover. */
   if (clip != null){
     clip.addEventListener("mouseover", function () {
       clip.play();
@@ -16,12 +16,9 @@ const Projects = () => {
   }
   const {x, y} = useMousePosition()
 
-
-
-  // noinspection JSValidateTypes
   return (
     <div className="Propage">
-      <div className="Projects container mx-auto" id="projects">
+      <div className="Projects" id="projects">
         <h2 className="mt-20 text-center lg:text-5xl sm:text-3xl text-2xl font-semibold">Selected Projects ✨</h2>
         <div className="gitext text-xl text-right invisible">(Click for github 📤)</div>
         <div className="Project-list flex flex-col max-w-6xl m-auto mt-20">

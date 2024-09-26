@@ -32,7 +32,7 @@ const Navbar = (props) => {
       setIsMobileMenuOpen(false);
       }
   }
-  // noinspection JSValidateTypes
+
   return (
     <header className="header-main">
       {/*Desktop Menu header*/}
@@ -85,7 +85,7 @@ const Navbar = (props) => {
           </svg>
 
           {/*Mobile Menu header*/}
-          <div className="sm:hidden mt-1 mb-[17px] right-[10px] text-right">
+          <div className="sm:hidden mt-1 mb-[17.1px] right-[10px] text-right">
             <button className="focus:outline-none" onClick={toggleMobileMenu}>
               {isMobileMenuOpen ? (
                 <FaTimes className="mr-3 h-6 w-5"/>
