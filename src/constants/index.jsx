@@ -12,11 +12,12 @@ import {
   RiReactjsLine, RiTailwindCssFill
 } from "react-icons/ri";
 import {TbHexagonLetterC} from "react-icons/tb";
-import {SiVite} from "react-icons/si";
-import {FaGitSquare, FaPython, FaSwift} from "react-icons/fa";
+import {SiTypescript, SiVite} from "react-icons/si";
+import {FaAngular, FaGitSquare, FaNodeJs, FaPython, FaSwift} from "react-icons/fa";
 
 
 import {IoLogoCss3} from "react-icons/io";
+import {BiLogoFirebase} from "react-icons/bi";
 
 
 export const NAVIGATION_LINKS = [
@@ -53,13 +54,18 @@ export const SKILLSF = [
     experience: "1+ year",
   },
   {
-    icon: <FaSwift className="text-4xl lg:text-6xl text-orange-600" />,
-    name: "Swift",
+    icon: <FaAngular className="text-4xl lg:text-6xl text-red-600" />,
+    name: "Angular",
     experience: "1+ year",
   },
   {
-    icon: <SiVite className="text-4xl lg:text-6xl text-violet-600" />,
-    name: "Vite Js",
+    icon: <SiTypescript className="text-4xl lg:text-6xl text-blue-600" />,
+    name: "TypeScript",
+    experience: "1+ year",
+  },
+  {
+    icon: <FaSwift className="text-4xl lg:text-6xl text-orange-600" />,
+    name: "Swift",
     experience: "1+ year",
   },
 ];
@@ -80,6 +86,11 @@ export const SKILLSB = [
     experience: "1+ year",
   },
   {
+    icon: <FaNodeJs className="text-4xl lg:text-6xl text-green-600" />,
+    name: "NodeJs",
+    experience: "1+ year",
+  },
+  {
     icon: <RiDatabase2Line className="text-4xl lg:text-6xl text-sky-700" />,
     name: "SQL",
     experience: "1+ year",
@@ -87,6 +98,11 @@ export const SKILLSB = [
   {
     icon: <FaGitSquare className="text-4xl lg:text-6xl text-amber-800" />,
     name: "git",
+    experience: "2+ years",
+  },
+  {
+    icon: <BiLogoFirebase className="text-4xl lg:text-6xl text-yellow-600" />,
+    name: "Firebase",
     experience: "2+ years",
   },
 ];

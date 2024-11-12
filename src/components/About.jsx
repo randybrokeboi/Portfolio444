@@ -14,9 +14,9 @@ const About = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
   return (
-    <div className="About" ref={targetRef} id="about">
-      <h2 className="mt-20 text-center lg:text-5xl sm:text-3xl text-2xl font-semibold">About ℹ️</h2>
-      <motion.div className="relative"  style={{rotate, x, y, scale}}>
+    <div className="About mb-20" ref={targetRef} id="about">
+      <h2 className="mt-40 text-center lg:text-5xl sm:text-3xl text-2xl font-semibold">About ℹ️</h2>
+      <motion.div className="relative" style={{rotate, x, y, scale}}>
         <h4
           className="slides lg:mt-40 sm:mt-24 mt-16 mx-1.5 font-bold text-black font-sans lg:text-9xl sm:text-7xl text-5xl leading-none uppercase ">
                 <span className="slide1">
@@ -35,12 +35,12 @@ const About = () => {
       </motion.div>
       <h3 className="p-12 lg:mt-12 sm:mt-8 mt-6 lg:text-7xl sm:text-5xl text-3xl  font-sans text-center">
         <BlurText text="I&apos;m" delay={100} transi={2}/>
-        <Magnet padding={200}><BlurText text="Randy" delay={300} space={0} transi={5} className="font-bold"/>
+        <Magnet padding={300}><BlurText text="Randy" delay={300} space={0} transi={5} className="font-bold"/>
         </Magnet>
         <BlurText text="&sbquo; a french Developer." delay={100} transi={2}/>
         <p>
           <BlurText
-            text="I love learning new things, whether it&apos;s in life or programming. My curiosity is always pushing me forward."
+            text="I love learning new things, whether it&apos;s in life or while programming. My curiosity is always pushing me forward."
             delay={100}/>
           </p>
       </h3>

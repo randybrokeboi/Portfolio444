@@ -322,10 +322,13 @@ shader-art {
 
 }
 .bottomcenter{
+    height: 8%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
-    top: 80%;
+    top: 74%;
+    border-radius: 0 0 30px 30px;
+    align-content: flex-end;
 
 }
 *, * :before, * :after {
@@ -389,7 +392,7 @@ body:has(.Propage:hover) .cursor {
     border-radius: 50%;
     background: white;
     transform: translate(-50%, -50%);
-    transition: 0.04s;
+    transition: 0.02s;
     mix-blend-mode: difference;
 }
 @media (hover:none) {
@@ -401,6 +404,21 @@ body:has(.Propage:hover) .cursor {
     }
 }
 
+body:has(.ProjectS:hover, .videocursorrrr:hover) .cursor {
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+@media screen and (max-width: 740px) {
+    body:has(.ProjectS:hover, .videocursorrrr:hover) .cursor {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        mix-blend-mode: normal;
+    }
+}
 body:has(.ProjectH:hover, .videocursor:hover) .cursor {
     width: 249px;
     height: 540px;
@@ -451,6 +469,9 @@ body:has(.ProjectP:hover, .videocursorrr:hover) .cursor {
     }
 }
 
+body:has(.ProjectS:hover, .videocursorrrr:hover) .videocursorrrr {
+    display: block;
+}
 body:has(.ProjectH:hover, .videocursor:hover) .videocursor {
     display: block;
 }
@@ -475,6 +496,9 @@ body:has(.ProjectP:hover, .videocursorrr:hover) .videocursorrr {
     }
     .Project-row, .Project-desc{
         pointer-events: auto;
+    }
+    body:has(.ProjectS .Project-row:hover, .ProjectS .Project-desc:hover, .videocursorrrr:hover) .videocursorrrr {
+        display: block;
     }
     body:has(.ProjectH .Project-row:hover, .ProjectH .Project-desc:hover, .videocursor:hover) .videocursor {
         display: block;

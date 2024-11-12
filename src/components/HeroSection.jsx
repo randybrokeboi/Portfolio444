@@ -48,6 +48,20 @@ const HeroSection = (props) => {
     else
       setheur(heur + 1)
   }
+  const handleLinkClick = (e, href) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      const offset = -85;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY + offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+    }
+  }
 
   let color1 = "#ffffff";
   let color2 = "#838399";
@@ -55,7 +69,7 @@ const HeroSection = (props) => {
   let color4 = "#474747";
 
   return (
-    <div className="hero">
+    <div className="hero mb-20">
       <div className="heromg relative w-full h-full">
         <div className="gradient-container">
           {/*Canva*/}
@@ -71,8 +85,8 @@ const HeroSection = (props) => {
           text-[7rem] left-0 tracking-normal leading-none overflow-hidden" onClick={() => switche()}>{heur}:{heur}{heur}</h1>
         </div>
         {/*bottom bar*/}
-        <div className="bottomcenter relative">
-          <Bounce className="Sliding effect">
+        <div className="bottomcenter relative" onClick={(e) => handleLinkClick(e, "#about")}>
+          <Bounce className="Sliding effect mb-[1%]">
             <svg xmlns="http://www.w3.org/2000/svg" className="rounded"
                   x="0px" y="0px" width="200px" height="10px">
               <path className="path2" fill="#01a09e" strokeWidth="15" stroke="#ffffff80" d="M0 0 l2120 0"/>

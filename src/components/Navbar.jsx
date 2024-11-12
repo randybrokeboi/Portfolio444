@@ -18,20 +18,34 @@ const Navbar = (props) => {
     if (!(href.includes("mailto"))){
       e.preventDefault();
       const targetElement = document.querySelector(href);
-      console.log(href);
       if (targetElement) {
         const offset = -85;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY + offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        })
+        window.scrollTo({top: offsetPosition, behavior: "smooth"})
       }
       setIsMobileMenuOpen(false);
       }
   }
+  const handleLogo = (e, use = "out") => {
+    e.preventDefault();
+    let clip = document.querySelector("#logoanim")
+    if (clip != null && use === "out")
+      clip.playbackRate = 1
+    else if (clip != null && use === "over")
+      clip.playbackRate = 0.4
+  }
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    let clip = document.querySelector("#logoanim")
+    if (clip != null) {
+      clip.currentTime = 19.90
+      clip.playbackRate = 1
+    }
+    window.scrollTo({top: 0, behavior: "smooth"})
+    setIsMobileMenuOpen(false);
+  }
+
 
   return (
     <header className="header-main">
@@ -39,8 +53,10 @@ const Navbar = (props) => {
       <div className="top-line"></div>
       <div className="header-container">
         <div className="header-logo-box">
-          <a href="#">
-            <video src={logomov} id="logoanim" autoPlay muted loop preload="auto" poster={logopng} playsInline className="relative left-2.5 top-2.5   max-w-[110%]"></video>
+          <a href="">
+            <video src={logomov} id="logoanim" onMouseOut={(e) => handleLogo(e)} onMouseOver={(e) => handleLogo(e, "over")}
+                   onClick={(e) => handleLogoClick(e)} autoPlay muted loop playsInline preload="auto" poster={logopng}
+                   className="logoanim relative left-2.5 top-2.5   max-w-[110%]"></video>
           </a>
           <svg className="svg-corner corner-logo-box-one -bottom-[30px] lg:left-0 md:left-[20px] left-[10px]" width="30" height="30" viewBox="0 0 30 30" fill="none"
                xmlns="http://www.w3.org/2000/svg">
