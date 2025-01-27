@@ -28,7 +28,7 @@ const About = () => {
                   <span>你好🇨🇳</span>
                   <span>Guten Tag🇩🇪</span>
                   <span>Oyez Oyez🏰</span>
-                  <span>Wesh🏴‍☠️</span>
+                  <span>Yoo🏴‍☠️</span>
                   <span>Hello🌐</span>
                 </span>
         </h4>
