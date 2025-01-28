@@ -345,9 +345,25 @@ const BlurText = ({ text, delay = 200, className = '', space = 1, transi = 0 }) 
   if (space === 1){
     sp = '\xa0'
   }
+  if (text === "Randy" && ", a French Developer."){
+    return (
+      <span ref={ref} className={`${className}`}>
+      {springs.map((props, index) => (
+        <animated.span
+          key={index}
+          style={props}
+          className="inline-block will-change-transform will-change-filter will-change-opacity"
+        >
+          <h1>{words[index]}{sp}</h1>
+        </animated.span>
+      ))}
+    </span>
+    );
 
-  return (
-    <span ref={ref} className={`${className}`}>
+  }
+  else {
+    return (
+      <span ref={ref} className={`${className}`}>
       {springs.map((props, index) => (
         <animated.span
           key={index}
@@ -358,7 +374,10 @@ const BlurText = ({ text, delay = 200, className = '', space = 1, transi = 0 }) 
         </animated.span>
       ))}
     </span>
-  );
+    );
+  }
+
+
 };
 
 const StarBorder = ({

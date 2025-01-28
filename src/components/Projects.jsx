@@ -12,29 +12,29 @@ const Projects = () => {
         <h2 className="mt-40 text-center lg:text-5xl sm:text-3xl text-2xl font-semibold">Selected Projects 💡</h2>
         <div className="gitext text-xl text-right invisible">(Click for github 📤)</div>
         <div className="Project-list flex flex-col max-w-6xl m-auto mt-20">
-          <a className="Project ProjectS">
-            <div className="Project-row text-black sm:text-8xl text-4xl opacity-50">SongMates</div>
+          <a className="Project ProjectS" href="https://songmates.netlify.app" target="_blank">
+            <h1 className="Project-row text-black sm:text-8xl text-4xl opacity-50">SongMates</h1>
             <div className="Project-desc"> New Project Coming Soon 🤐&nbsp;
               <GradientText colors={["#5940ff", "#bfff40", "#5940ff", "#bfff40", "#5940ff"]} animationSpeed={7}
                             showBorder={false}>[Angular + Bootstrap + Node js + Firebase + Spotify/Apple Music API]</GradientText>
             </div>
           </a>
           <a className="Project ProjectH" href="https://github.com/randybrokeboi/Hercule" target="_blank">
-            <div className="Project-row text-black sm:text-8xl text-4xl">Hercule</div>
+            <h1 className="Project-row text-black sm:text-8xl text-4xl">Hercule</h1>
             <div className="Project-desc"> Ios Gym equipment renting app using real-time databases&nbsp;
               <GradientText colors={["#ff4040", "#4079ff", "#ff4040", "#4079ff", "#ff4040"]} animationSpeed={3}
                             showBorder={false}>[SwiftUI + Firebase]</GradientText>
             </div>
           </a>
           <a className="Project ProjectN" href="https://github.com/randybrokeboi/Naruto" target="_blank">
-            <div className="Project-row text-black sm:text-8xl text-4xl">Naruto Shippython</div>
+            <h1 className="Project-row text-black sm:text-8xl text-4xl">Naruto Shippython</h1>
             <div className="Project-desc"> Fighting game based on Naruto™️ styled as a flash game&nbsp;
               <GradientText colors={["#ffdb00", "#4079ff", "#ffef40", "#4079ff", "#ffdb00"]} animationSpeed={3}
                             showBorder={false}>[Python / Pygames]</GradientText>
             </div>
           </a>
           <a className="Project ProjectP" href="https://github.com/randybrokeboi/Portfolio444" target="_blank">
-            <div className="Project-row text-black sm:text-8xl text-4xl" >Portfolio</div>
+            <h1 className="Project-row text-black sm:text-8xl text-4xl" >Portfolio</h1>
             <div className="Project-desc"> Personal Portfolio made from scratch&nbsp;
              <GradientText colors={["#11ff00", "#4079ff", "#11ff00", "#4079ff", "#11ff00"]} animationSpeed={3}
                             showBorder={false}>[React js + Tailwind css]</GradientText>

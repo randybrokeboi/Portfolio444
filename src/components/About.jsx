@@ -37,7 +37,7 @@ const About = () => {
         <BlurText text="I&apos;m" delay={100} transi={2}/>
         <Magnet padding={300}><BlurText text="Randy" delay={300} space={0} transi={5} className="font-bold"/>
         </Magnet>
-        <BlurText text="&sbquo; a French Developer." delay={100} transi={2}/>
+        <BlurText text=", a French Developer." delay={100} transi={2}/>
         <p>
           <BlurText
             text="I love learning new things, whether in life or while programming. My curiosity is always pushing me forward."
